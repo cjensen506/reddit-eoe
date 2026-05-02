@@ -1,0 +1,18 @@
+[project]
+name = "eoe"
+version = "0.1.0"
+description = "Open-ended analysis of self-reported symptoms in r/EosinophilicE posts."
+readme = "README.md"
+authors = [
+    { name = "Chris Jensen", email = "chris.jensen506@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.97.0",
+    "matplotlib>=3.10.9",
+    "python-dotenv>=1.2.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
