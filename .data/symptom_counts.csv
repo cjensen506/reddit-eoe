@@ -1,0 +1,63 @@
+canonical,post_count,post_share,author_count,author_share,example_phrases
+dysphagia,1542,0.3536,1161,0.4130,difficulty swallowing; dysphagia; trouble swallowing
+food impaction,1299,0.2979,1044,0.3714,food impaction; food getting stuck; food getting stuck in throat
+throat tightness,643,0.1474,495,0.1761,throat tightness; chest tightness; throat tightening
+chest pain,567,0.1300,442,0.1572,chest pain; chest pains; chest discomfort
+acid reflux,512,0.1174,437,0.1555,acid reflux; reflux; reflux symptoms
+vomiting,498,0.1142,446,0.1587,vomiting; vomiting food; throwing up
+stomach pain,470,0.1078,373,0.1327,stomach pain; abdominal pain; stomach aches
+choking,373,0.0855,341,0.1213,choking on food; choking; choking episodes
+difficulty eating,346,0.0793,301,0.1071,difficulty eating; unable to eat solid food; unable to eat
+nausea,323,0.0741,255,0.0907,nausea; chronic nausea; nausea after eating
+sore throat,317,0.0727,269,0.0957,sore throat; throat pain; throat irritation
+weight loss,313,0.0718,278,0.0989,weight loss; significant weight loss; underweight
+globus sensation,290,0.0665,245,0.0872,globus sensation; lump in throat; globus
+shortness of breath,288,0.0660,213,0.0758,shortness of breath; difficulty breathing; trouble breathing
+burping,283,0.0649,224,0.0797,burping; belching; constant burping
+heartburn,275,0.0631,237,0.0843,heartburn; severe heartburn; indigestion
+regurgitation,274,0.0628,238,0.0847,regurgitation; regurgitating; regurgitating food
+pain (general),214,0.0491,189,0.0672,pain; severe pain; constant pain
+fatigue,209,0.0479,181,0.0644,fatigue; exhaustion; extreme fatigue
+flare-up,202,0.0463,180,0.0640,flare ups; flare up; bad flare up
+esophageal pain,191,0.0438,168,0.0598,esophageal pain; esophagus pain; pain in esophagus
+coughing,182,0.0417,153,0.0544,coughing; dry cough; cough
+esophageal inflammation/swelling,178,0.0408,150,0.0534,swollen esophagus; esophageal inflammation; swelling
+heartburn/burning sensation,177,0.0406,160,0.0569,throat burning; burning; burning in chest
+mucus/phlegm,173,0.0397,154,0.0548,mucus in throat; phlegm; excess mucus
+itching,139,0.0319,118,0.0420,itchy throat; hives; tongue tingling
+esophageal spasms,133,0.0305,118,0.0420,esophageal spasms; throat spasms; esophageal spasm
+bloating,131,0.0300,115,0.0409,bloating; early satiety; bloated
+throat clearing,121,0.0277,93,0.0331,throat clearing; post nasal drip; constant throat clearing
+diarrhea,118,0.0271,103,0.0366,diarrhea; blood in stool; diarrhoea
+pill getting stuck,112,0.0257,105,0.0374,pills getting stuck; pills getting stuck in throat; pill getting stuck in throat
+mouth symptoms,104,0.0238,87,0.0309,bad breath; thrush; sore tongue
+joint/muscle pain,93,0.0213,90,0.0320,joint pain; ear pain; jaw pain
+gas,92,0.0211,74,0.0263,gas; gassiness; gassy
+back pain,89,0.0204,79,0.0281,back pain; upper back pain; pain in back
+excess saliva,89,0.0204,83,0.0295,excess saliva; hypersalivation; excessive saliva
+dizziness,88,0.0202,78,0.0277,dizziness; lightheadedness; feeling faint
+loss of appetite,87,0.0199,84,0.0299,loss of appetite; no appetite; decreased appetite
+throat narrowing,75,0.0172,71,0.0253,pressure behind sternum; pressure; pressure in esophagus
+heart palpitations,71,0.0163,58,0.0206,heart palpitations; heart racing; heart pounding
+nasal symptoms,65,0.0149,57,0.0203,stuffy nose; ear popping; ears popping
+gagging,63,0.0144,58,0.0206,gagging; can't take pills without gagging; dry heaves
+hoarse/raspy voice,63,0.0144,57,0.0203,hoarse voice; hoarseness; raspy voice
+trouble sleeping,59,0.0135,55,0.0196,trouble sleeping; inability to sleep; difficulty sleeping
+headache,57,0.0131,48,0.0171,headaches; headache; migraine
+constipation,54,0.0124,46,0.0164,constipation; chronic constipation; barely any bowel movements
+panic/anxiety,54,0.0124,51,0.0181,panic attacks; agitation; anxiety about food getting stuck
+dry mouth/throat,50,0.0115,46,0.0164,dry throat; dry mouth; throat dryness
+sweating,39,0.0089,29,0.0103,cold sweats; excessive sweating; sweats
+brain fog,35,0.0080,30,0.0107,brain fog; brain fog after eating; cognitive difficulty
+dehydration,32,0.0073,30,0.0107,dehydration; difficulty drinking water; dehydration requiring hospitalization
+hiccups,31,0.0071,30,0.0107,hiccups; painful hiccups; hiccuping
+throat gurgling,29,0.0066,24,0.0085,stomach gurgling; throat gurgling; throat gurgling liquid
+difficulty breathing (swallowing-related),25,0.0057,24,0.0085,feeling of suffocation; airway blockage with swallowing; breath catching in throat
+weight gain difficulty,25,0.0057,23,0.0082,difficulty gaining weight; weight gain; poor weight gain
+fever/chills,20,0.0046,19,0.0068,fever; chills; low grade fever
+anemia/low iron,16,0.0037,14,0.0050,anemia; blood in vomit; low iron / anemia
+extreme hunger,16,0.0037,16,0.0057,extreme hunger; constant hunger; hunger
+ulcers,9,0.0021,9,0.0032,ulcers; esophageal ulcers; mouth sores feel inflamed and hurt during reaction
+gastritis,7,0.0016,7,0.0025,gastritis; gastritis symptoms; gastritis pains
+hair loss,7,0.0016,7,0.0025,hair loss; dry hair; hair falling out
+acne,3,0.0007,3,0.0011,acne; increased facial acne

@@ -1,4 +1,5 @@
-.data/
+.data/*
+!.data/symptom_counts.csv
 .env
 .venv/
 __pycache__/

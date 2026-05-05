@@ -19,7 +19,7 @@ Eosinophilic Esophagitis (EoE) is an allergic inflammatory condition of the esop
 | difficulty eating | 7.9% |
 | nausea | 7.4% |
 
-Across **4,361 symptomatic posts** by **2,811 distinct authors**. Per-symptom CSV at [.data/symptom_counts.csv](.data/symptom_counts.csv); 5 verbatim grounding quotes per canonical symptom at [.data/symptom_quotes.md](.data/symptom_quotes.md).
+Across **4,361 symptomatic posts** by **2,811 distinct authors**. Per-symptom CSV at [.data/symptom_counts.csv](.data/symptom_counts.csv).
 
 ![Top 30 symptoms](images/top_symptoms.png)
 
@@ -55,7 +55,7 @@ A `--validate` flag reports unmapped phrases and any phrase that ended up in two
 - **[images/top_symptoms.png](images/top_symptoms.png)** — top-30 horizontal bar chart (embedded above).
 - **[images/wordcloud.png](images/wordcloud.png)** — word cloud sized by post count.
 - **[images/cooccurrence.png](images/cooccurrence.png)** — top-20 co-occurrence heatmap, conditional probability `P(column | row)`, diagonal masked.
-- **[symptom_quotes.md](.data/symptom_quotes.md)** — 5 randomly sampled verbatim quotes per canonical symptom, with permalink and post id.
+- **`.data/symptom_quotes.md`** (locally generated, not tracked) — 5 randomly sampled verbatim quotes per canonical symptom, with permalink and post id.
 
 ![Co-occurrence heatmap](images/cooccurrence.png)
 
