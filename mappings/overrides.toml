@@ -1,0 +1,18 @@
+# Manual overrides applied on top of the raw Stage-2 LLM mapping
+# (mappings/symptom_mapping.raw.json) to produce the final mapping
+# (mappings/symptom_mapping.json) consumed by Stage 3.
+#
+# Every entry below is a deliberate human decision. Operations are applied
+# in order. Re-run `uv run python -m eoe.apply_overrides` after editing.
+#
+# Supported ops:
+#   merge   — combine multiple canonical groups under a single name
+#   rename  — change a canonical's name without restructuring
+#   move    — move named phrases from one canonical to another
+
+[[operations]]
+op = "merge"
+canonicals = ["acid reflux", "heartburn"]
+into = "acid reflux / heartburn"
+# Stage 2 split these on surface phrasing (one bucket per word) but they're
+# the same symptom clinically and most users use the terms interchangeably.
