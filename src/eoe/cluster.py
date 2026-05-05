@@ -2,7 +2,8 @@
 
 Reads .data/symptoms_raw.jsonl, builds a frequency table of distinct phrases,
 and asks Claude (Sonnet 4.6 by default) to group synonyms under canonical names.
-Writes the result as a hand-editable .data/symptom_mapping.json.
+Writes the result as a hand-editable mappings/symptom_mapping.json (tracked in
+git so reviewers can see and propose edits to the canonical groupings).
 
 The mapping is the single source of truth for Stage 3 aggregation, so review
 and edit symptom_mapping.json before proceeding.
@@ -27,8 +28,9 @@ from eoe.json_parsing import parse_model_json
 from eoe.prompts import CLUSTERING_SYSTEM_PROMPT, FIXUP_ASSIGNMENT_SYSTEM_PROMPT
 
 DATA_DIR = Path(".data")
+MAPPINGS_DIR = Path("mappings")
 RESULTS_FILE = DATA_DIR / "symptoms_raw.jsonl"
-MAPPING_FILE = DATA_DIR / "symptom_mapping.json"
+MAPPING_FILE = MAPPINGS_DIR / "symptom_mapping.json"
 
 CLUSTER_MODEL = "claude-sonnet-4-6"
 CLUSTER_MAX_TOKENS = 16000

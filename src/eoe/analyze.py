@@ -1,13 +1,14 @@
 """Stage 3: aggregate canonical symptom counts and produce charts + quotes.
 
 Reads:
-  .data/symptoms_raw.jsonl    # one row per post, with raw extracted symptoms
-  .data/symptom_mapping.json  # raw phrase -> canonical mapping
+  .data/symptoms_raw.jsonl       # one row per post, with raw extracted symptoms
+  mappings/symptom_mapping.json  # raw phrase -> canonical mapping (tracked in git)
 
 Writes:
   .data/symptom_counts.csv    # per-canonical post + author counts, side by side
-  .data/charts/top_symptoms.png   # top-30 horizontal bar chart
-  .data/charts/cooccurrence.png   # top-20 co-occurrence heatmap
+  images/top_symptoms.png     # top-30 horizontal bar chart (tracked in git)
+  images/wordcloud.png        # word cloud sized by post count (tracked in git)
+  images/cooccurrence.png     # top-20 co-occurrence heatmap (tracked in git)
   .data/symptom_quotes.md     # 3-5 verbatim grounding quotes per canonical
 
 Per-post dedup: a post that uses 4 phrases that all map to `dysphagia` counts
@@ -32,14 +33,15 @@ import numpy as np
 from wordcloud import WordCloud
 
 DATA_DIR = Path(".data")
+MAPPINGS_DIR = Path("mappings")
 RAW_FILE = DATA_DIR / "symptoms_raw.jsonl"
-MAPPING_FILE = DATA_DIR / "symptom_mapping.json"
+MAPPING_FILE = MAPPINGS_DIR / "symptom_mapping.json"
 COUNTS_CSV = DATA_DIR / "symptom_counts.csv"
 QUOTES_FILE = DATA_DIR / "symptom_quotes.md"
-CHARTS_DIR = DATA_DIR / "charts"
-TOP_CHART = CHARTS_DIR / "top_symptoms.png"
-COOC_CHART = CHARTS_DIR / "cooccurrence.png"
-WORDCLOUD_CHART = CHARTS_DIR / "wordcloud.png"
+IMAGES_DIR = Path("images")
+TOP_CHART = IMAGES_DIR / "top_symptoms.png"
+COOC_CHART = IMAGES_DIR / "cooccurrence.png"
+WORDCLOUD_CHART = IMAGES_DIR / "wordcloud.png"
 
 TOP_N_BAR = 30
 TOP_N_HEATMAP = 20
@@ -349,7 +351,7 @@ def main() -> None:
     if not MAPPING_FILE.exists():
         raise SystemExit(f"Missing {MAPPING_FILE} — run cluster.py first.")
 
-    CHARTS_DIR.mkdir(parents=True, exist_ok=True)
+    IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
     phrase_to_canon, canonicals, examples = load_mapping()
     print(

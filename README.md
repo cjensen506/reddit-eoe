@@ -19,9 +19,13 @@ Eosinophilic Esophagitis (EoE) is an allergic inflammatory condition of the esop
 | difficulty eating | 7.9% |
 | nausea | 7.4% |
 
-Across **4,361 symptomatic posts** by **2,811 distinct authors**. Full chart in [.data/charts/top_symptoms.png](.data/charts/top_symptoms.png); see also the word cloud and co-occurrence heatmap in the same directory, the per-symptom CSV at [.data/symptom_counts.csv](.data/symptom_counts.csv), and 5 verbatim grounding quotes per canonical symptom in [.data/symptom_quotes.md](.data/symptom_quotes.md).
+Across **4,361 symptomatic posts** by **2,811 distinct authors**. Per-symptom CSV at [.data/symptom_counts.csv](.data/symptom_counts.csv); 5 verbatim grounding quotes per canonical symptom at [.data/symptom_quotes.md](.data/symptom_quotes.md).
+
+![Top 30 symptoms](images/top_symptoms.png)
 
 ## How it works
+
+![Pipeline workflow](images/workflow.png)
 
 Three-stage pipeline using the Anthropic API. Each stage writes resumable artifacts to `.data/` and pauses for human review before the next.
 
@@ -39,7 +43,7 @@ Output: [.data/symptoms_raw.jsonl](.data/symptoms_raw.jsonl) — one row per pos
 - **`--fixup`** patches Pass 1 output: targeted LLM mapping for any high-count phrases the model missed, plus deterministic dedup of phrases the model placed in two groups (winner = higher-total group).
 - **Pass 2 (`--pass2`)** chunk-maps the long-tail singletons (~6,000 phrases) onto the established canonicals. Phrases the model declines stay in `unmapped` as the genuine long tail.
 
-Output: [.data/symptom_mapping.json](.data/symptom_mapping.json) — hand-editable, sorted by group total, every phrase carries its raw count.
+Output: [mappings/symptom_mapping.json](mappings/symptom_mapping.json) — hand-editable, sorted by group total, every phrase carries its raw count. Tracked in git so reviewers can see and propose changes to the canonical groupings.
 
 A `--validate` flag reports unmapped phrases and any phrase that ended up in two groups.
 
@@ -48,10 +52,14 @@ A `--validate` flag reports unmapped phrases and any phrase that ended up in two
 [`src/eoe/analyze.py`](src/eoe/analyze.py) applies the mapping to per-post symptom lists (deduped within a post so `dysphagia` mentioned 4 times in one post counts once), then writes:
 
 - **[symptom_counts.csv](.data/symptom_counts.csv)** — per-canonical post count, post share, author count, author share, plus example phrases. Both per-post and dedupe-by-author counts side by side, so prolific posters can be spotted.
-- **[charts/top_symptoms.png](.data/charts/top_symptoms.png)** — top-30 horizontal bar chart.
-- **[charts/wordcloud.png](.data/charts/wordcloud.png)** — word cloud sized by post count.
-- **[charts/cooccurrence.png](.data/charts/cooccurrence.png)** — top-20 co-occurrence heatmap, conditional probability `P(column | row)`, diagonal masked.
+- **[images/top_symptoms.png](images/top_symptoms.png)** — top-30 horizontal bar chart (embedded above).
+- **[images/wordcloud.png](images/wordcloud.png)** — word cloud sized by post count.
+- **[images/cooccurrence.png](images/cooccurrence.png)** — top-20 co-occurrence heatmap, conditional probability `P(column | row)`, diagonal masked.
 - **[symptom_quotes.md](.data/symptom_quotes.md)** — 5 randomly sampled verbatim quotes per canonical symptom, with permalink and post id.
+
+![Word cloud of canonical symptoms](images/wordcloud.png)
+
+![Co-occurrence heatmap](images/cooccurrence.png)
 
 Percentages use the **symptomatic-post denominator** (the 4,361 posts that report at least one symptom), not the full 8,262 analyzed posts. The remaining ~3,900 are correctly empty: treatment-only posts, dietary advice, hypothetical questions, etc.
 
@@ -100,6 +108,8 @@ src/eoe/
   cluster.py            # Stage 2: cluster phrases (Pass 1, --fixup, --pass2, --validate)
   analyze.py            # Stage 3: counts + charts + quotes
 .data/                  # gitignored; pipeline inputs/outputs
+mappings/               # tracked; hand-reviewable phrase→canonical mapping
+images/                 # tracked; workflow diagram + chart snapshots
 ```
 
 Built with [uv](https://github.com/astral-sh/uv) and the [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python).
