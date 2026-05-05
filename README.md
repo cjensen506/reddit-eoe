@@ -57,8 +57,6 @@ A `--validate` flag reports unmapped phrases and any phrase that ended up in two
 - **[images/cooccurrence.png](images/cooccurrence.png)** — top-20 co-occurrence heatmap, conditional probability `P(column | row)`, diagonal masked.
 - **[symptom_quotes.md](.data/symptom_quotes.md)** — 5 randomly sampled verbatim quotes per canonical symptom, with permalink and post id.
 
-![Word cloud of canonical symptoms](images/wordcloud.png)
-
 ![Co-occurrence heatmap](images/cooccurrence.png)
 
 Percentages use the **symptomatic-post denominator** (the 4,361 posts that report at least one symptom), not the full 8,262 analyzed posts. The remaining ~3,900 are correctly empty: treatment-only posts, dietary advice, hypothetical questions, etc.
