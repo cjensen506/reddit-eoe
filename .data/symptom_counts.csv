@@ -1,9 +1,9 @@
 canonical,post_count,post_share,author_count,author_share,example_phrases
 dysphagia,1542,0.3536,1161,0.4130,difficulty swallowing; dysphagia; trouble swallowing
 food impaction,1299,0.2979,1044,0.3714,food impaction; food getting stuck; food getting stuck in throat
+acid reflux / heartburn,753,0.1727,622,0.2213,heartburn; acid reflux; reflux
 throat tightness,643,0.1474,495,0.1761,throat tightness; chest tightness; throat tightening
 chest pain,567,0.1300,442,0.1572,chest pain; chest pains; chest discomfort
-acid reflux,512,0.1174,437,0.1555,acid reflux; reflux; reflux symptoms
 vomiting,498,0.1142,446,0.1587,vomiting; vomiting food; throwing up
 stomach pain,470,0.1078,373,0.1327,stomach pain; abdominal pain; stomach aches
 choking,373,0.0855,341,0.1213,choking on food; choking; choking episodes
@@ -14,7 +14,6 @@ weight loss,313,0.0718,278,0.0989,weight loss; significant weight loss; underwei
 globus sensation,290,0.0665,245,0.0872,globus sensation; lump in throat; globus
 shortness of breath,288,0.0660,213,0.0758,shortness of breath; difficulty breathing; trouble breathing
 burping,283,0.0649,224,0.0797,burping; belching; constant burping
-heartburn,275,0.0631,237,0.0843,heartburn; severe heartburn; indigestion
 regurgitation,274,0.0628,238,0.0847,regurgitation; regurgitating; regurgitating food
 pain (general),214,0.0491,189,0.0672,pain; severe pain; constant pain
 fatigue,209,0.0479,181,0.0644,fatigue; exhaustion; extreme fatigue
