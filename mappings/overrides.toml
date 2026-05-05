@@ -16,3 +16,63 @@ canonicals = ["acid reflux", "heartburn"]
 into = "acid reflux / heartburn"
 # Stage 2 split these on surface phrasing (one bucket per word) but they're
 # the same symptom clinically and most users use the terms interchangeably.
+
+# Stage 2 also created a "heartburn/burning sensation" bucket that pulled in
+# phrases whose meaning is heartburn (retrosternal burning, anything mentioning
+# heartburn/reflux/acid, indigestion synonyms). Move those into the merged
+# group; the remainder is genuinely ambiguous burning (throat/esophagus/stomach)
+# that may be EoE-direct inflammation rather than acid, so it gets renamed.
+
+[[operations]]
+op = "move"
+from = "heartburn/burning sensation"
+to = "acid reflux / heartburn"
+phrases = [
+    # Retrosternal / chest burning — textbook heartburn
+    "burning in chest",
+    "chest burning",
+    "burning around breast bone",
+    "burning behind the breast bone",
+    "burning behind the sternum",
+    "burning chest",
+    "burning feeling in chest",
+    "burning feeling in sternum area",
+    "burning gassy pain in chest",
+    "burning gnawing sensation in chest and upper stomach",
+    "burning in my chest",
+    "burning in the sternum",
+    "burning on the left side of my chest",
+    "chest burn",
+    "chest burning pain",
+    "intense burning in chest",
+    "slight burning in chest",
+    "sternum burning",
+    "terrible discomfort/burning in my chest after eating peanut butter",
+    # Literally contain "heartburn"
+    "heartburn / reflux",
+    "heartburn or acid reflux sensation after eating",
+    "heartburn or silent reflux every day",
+    "heartburn with acid in throat",
+    "heartburn/burning sensation in chest",
+    "heartburn/chest pain worse during period",
+    "heartburn/reflux",
+    # Mention acid or reflux explicitly
+    "acid burning esophagus",
+    "acidic liquid reflux burning",
+    "acidic sensation in chest and throat",
+    "burning (acid reflux feeling)",
+    "burning acidity sensation in throat",
+    "reflux-burning sensation",
+    "reflux/burning sensation",
+    # Indigestion — clinical synonym for heartburn
+    "felt like indigestion",
+    "indigestion feeling almost daily",
+    "indigestion from tropical fruits",
+    "indigestion-like pain near sternum",
+    "severe indigestion",
+]
+
+[[operations]]
+op = "rename"
+from = "heartburn/burning sensation"
+to = "burning sensation"

@@ -1,7 +1,7 @@
 canonical,post_count,post_share,author_count,author_share,example_phrases
 dysphagia,1542,0.3536,1161,0.4130,difficulty swallowing; dysphagia; trouble swallowing
 food impaction,1299,0.2979,1044,0.3714,food impaction; food getting stuck; food getting stuck in throat
-acid reflux / heartburn,753,0.1727,622,0.2213,heartburn; acid reflux; reflux
+acid reflux / heartburn,786,0.1802,643,0.2287,heartburn; acid reflux; reflux
 throat tightness,643,0.1474,495,0.1761,throat tightness; chest tightness; throat tightening
 chest pain,567,0.1300,442,0.1572,chest pain; chest pains; chest discomfort
 vomiting,498,0.1142,446,0.1587,vomiting; vomiting food; throwing up
@@ -21,8 +21,8 @@ flare-up,202,0.0463,180,0.0640,flare ups; flare up; bad flare up
 esophageal pain,191,0.0438,168,0.0598,esophageal pain; esophagus pain; pain in esophagus
 coughing,182,0.0417,153,0.0544,coughing; dry cough; cough
 esophageal inflammation/swelling,178,0.0408,150,0.0534,swollen esophagus; esophageal inflammation; swelling
-heartburn/burning sensation,177,0.0406,160,0.0569,throat burning; burning; burning in chest
 mucus/phlegm,173,0.0397,154,0.0548,mucus in throat; phlegm; excess mucus
+burning sensation,142,0.0326,129,0.0459,throat burning; burning; burning sensation
 itching,139,0.0319,118,0.0420,itchy throat; hives; tongue tingling
 esophageal spasms,133,0.0305,118,0.0420,esophageal spasms; throat spasms; esophageal spasm
 bloating,131,0.0300,115,0.0409,bloating; early satiety; bloated

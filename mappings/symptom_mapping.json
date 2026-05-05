@@ -4967,7 +4967,7 @@
     },
     {
       "canonical": "acid reflux / heartburn",
-      "total": 867,
+      "total": 912,
       "members": [
         {
           "phrase": "heartburn",
@@ -5014,6 +5014,10 @@
           "count": 7
         },
         {
+          "phrase": "burning in chest",
+          "count": 6
+        },
+        {
           "phrase": "horrible reflux",
           "count": 6
         },
@@ -5032,6 +5036,10 @@
         {
           "phrase": "heart burn",
           "count": 4
+        },
+        {
+          "phrase": "chest burning",
+          "count": 3
         },
         {
           "phrase": "chronic reflux",
@@ -5167,6 +5175,10 @@
         },
         {
           "phrase": "acid buildup",
+          "count": 1
+        },
+        {
+          "phrase": "acid burning esophagus",
           "count": 1
         },
         {
@@ -5334,7 +5346,15 @@
           "count": 1
         },
         {
+          "phrase": "acidic liquid reflux burning",
+          "count": 1
+        },
+        {
           "phrase": "acidic reflux",
+          "count": 1
+        },
+        {
+          "phrase": "acidic sensation in chest and throat",
           "count": 1
         },
         {
@@ -5383,6 +5403,66 @@
         },
         {
           "phrase": "breakthrough heartburn",
+          "count": 1
+        },
+        {
+          "phrase": "burning (acid reflux feeling)",
+          "count": 1
+        },
+        {
+          "phrase": "burning acidity sensation in throat",
+          "count": 1
+        },
+        {
+          "phrase": "burning around breast bone",
+          "count": 1
+        },
+        {
+          "phrase": "burning behind the breast bone",
+          "count": 1
+        },
+        {
+          "phrase": "burning behind the sternum",
+          "count": 1
+        },
+        {
+          "phrase": "burning chest",
+          "count": 1
+        },
+        {
+          "phrase": "burning feeling in chest",
+          "count": 1
+        },
+        {
+          "phrase": "burning feeling in sternum area",
+          "count": 1
+        },
+        {
+          "phrase": "burning gassy pain in chest",
+          "count": 1
+        },
+        {
+          "phrase": "burning gnawing sensation in chest and upper stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning in my chest",
+          "count": 1
+        },
+        {
+          "phrase": "burning in the sternum",
+          "count": 1
+        },
+        {
+          "phrase": "burning on the left side of my chest",
+          "count": 1
+        },
+        {
+          "phrase": "chest burn",
+          "count": 1
+        },
+        {
+          "phrase": "chest burning pain",
           "count": 1
         },
         {
@@ -5462,6 +5542,10 @@
           "count": 1
         },
         {
+          "phrase": "felt like indigestion",
+          "count": 1
+        },
+        {
           "phrase": "frequent acid reflux",
           "count": 1
         },
@@ -5503,6 +5587,10 @@
         },
         {
           "phrase": "heartburn (severe)",
+          "count": 1
+        },
+        {
+          "phrase": "heartburn / reflux",
           "count": 1
         },
         {
@@ -5570,6 +5658,14 @@
           "count": 1
         },
         {
+          "phrase": "heartburn or acid reflux sensation after eating",
+          "count": 1
+        },
+        {
+          "phrase": "heartburn or silent reflux every day",
+          "count": 1
+        },
+        {
           "phrase": "heartburn pain when accidentally eating wheat",
           "count": 1
         },
@@ -5594,6 +5690,10 @@
           "count": 1
         },
         {
+          "phrase": "heartburn with acid in throat",
+          "count": 1
+        },
+        {
           "phrase": "heartburn worsening",
           "count": 1
         },
@@ -5614,6 +5714,18 @@
           "count": 1
         },
         {
+          "phrase": "heartburn/burning sensation in chest",
+          "count": 1
+        },
+        {
+          "phrase": "heartburn/chest pain worse during period",
+          "count": 1
+        },
+        {
+          "phrase": "heartburn/reflux",
+          "count": 1
+        },
+        {
           "phrase": "horrible acid reflux",
           "count": 1
         },
@@ -5626,11 +5738,27 @@
           "count": 1
         },
         {
+          "phrase": "indigestion feeling almost daily",
+          "count": 1
+        },
+        {
+          "phrase": "indigestion from tropical fruits",
+          "count": 1
+        },
+        {
+          "phrase": "indigestion-like pain near sternum",
+          "count": 1
+        },
+        {
           "phrase": "insanely bad acid reflux",
           "count": 1
         },
         {
           "phrase": "intense acid reflux",
+          "count": 1
+        },
+        {
+          "phrase": "intense burning in chest",
           "count": 1
         },
         {
@@ -5802,6 +5930,14 @@
           "count": 1
         },
         {
+          "phrase": "reflux-burning sensation",
+          "count": 1
+        },
+        {
+          "phrase": "reflux/burning sensation",
+          "count": 1
+        },
+        {
           "phrase": "refluxing",
           "count": 1
         },
@@ -5834,6 +5970,10 @@
           "count": 1
         },
         {
+          "phrase": "severe indigestion",
+          "count": 1
+        },
+        {
           "phrase": "severe persistent heartburn",
           "count": 1
         },
@@ -5854,11 +5994,19 @@
           "count": 1
         },
         {
+          "phrase": "slight burning in chest",
+          "count": 1
+        },
+        {
           "phrase": "sour taste",
           "count": 1
         },
         {
           "phrase": "sour taste in throat",
+          "count": 1
+        },
+        {
+          "phrase": "sternum burning",
           "count": 1
         },
         {
@@ -5883,6 +6031,10 @@
         },
         {
           "phrase": "tasting stomach acid",
+          "count": 1
+        },
+        {
+          "phrase": "terrible discomfort/burning in my chest after eating peanut butter",
           "count": 1
         },
         {
@@ -18590,584 +18742,6 @@
       ]
     },
     {
-      "canonical": "heartburn/burning sensation",
-      "total": 201,
-      "members": [
-        {
-          "phrase": "throat burning",
-          "count": 15
-        },
-        {
-          "phrase": "burning",
-          "count": 8
-        },
-        {
-          "phrase": "burning in chest",
-          "count": 6
-        },
-        {
-          "phrase": "burning sensation",
-          "count": 6
-        },
-        {
-          "phrase": "burning in esophagus",
-          "count": 5
-        },
-        {
-          "phrase": "burning in throat",
-          "count": 5
-        },
-        {
-          "phrase": "burning in the throat",
-          "count": 3
-        },
-        {
-          "phrase": "burning mouth",
-          "count": 3
-        },
-        {
-          "phrase": "burning pain",
-          "count": 3
-        },
-        {
-          "phrase": "burning sensation in throat",
-          "count": 3
-        },
-        {
-          "phrase": "chest burning",
-          "count": 3
-        },
-        {
-          "phrase": "burning esophagus",
-          "count": 2
-        },
-        {
-          "phrase": "burning feeling",
-          "count": 2
-        },
-        {
-          "phrase": "burning in neck",
-          "count": 2
-        },
-        {
-          "phrase": "burning sensation in chest",
-          "count": 2
-        },
-        {
-          "phrase": "burning sensation in esophagus",
-          "count": 2
-        },
-        {
-          "phrase": "burning throat",
-          "count": 2
-        },
-        {
-          "phrase": "esophagus burning",
-          "count": 2
-        },
-        {
-          "phrase": "throat burn",
-          "count": 2
-        },
-        {
-          "phrase": "throat on fire",
-          "count": 2
-        },
-        {
-          "phrase": "acid burning esophagus",
-          "count": 1
-        },
-        {
-          "phrase": "acidic liquid reflux burning",
-          "count": 1
-        },
-        {
-          "phrase": "acidic sensation in chest and throat",
-          "count": 1
-        },
-        {
-          "phrase": "ambient pain/burning",
-          "count": 1
-        },
-        {
-          "phrase": "burning (acid reflux feeling)",
-          "count": 1
-        },
-        {
-          "phrase": "burning acidity sensation in throat",
-          "count": 1
-        },
-        {
-          "phrase": "burning after meals",
-          "count": 1
-        },
-        {
-          "phrase": "burning around breast bone",
-          "count": 1
-        },
-        {
-          "phrase": "burning at esophagus",
-          "count": 1
-        },
-        {
-          "phrase": "burning at top of throat",
-          "count": 1
-        },
-        {
-          "phrase": "burning behind the breast bone",
-          "count": 1
-        },
-        {
-          "phrase": "burning behind the sternum",
-          "count": 1
-        },
-        {
-          "phrase": "burning chest",
-          "count": 1
-        },
-        {
-          "phrase": "burning epigastric pain when hungry",
-          "count": 1
-        },
-        {
-          "phrase": "burning feeling between throat and esophagus",
-          "count": 1
-        },
-        {
-          "phrase": "burning feeling in chest",
-          "count": 1
-        },
-        {
-          "phrase": "burning feeling in sternum area",
-          "count": 1
-        },
-        {
-          "phrase": "burning feeling in throat",
-          "count": 1
-        },
-        {
-          "phrase": "burning gassy pain in chest",
-          "count": 1
-        },
-        {
-          "phrase": "burning gnawing sensation in chest and upper stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning in chest and upper and mid back when swallowing",
-          "count": 1
-        },
-        {
-          "phrase": "burning in my chest",
-          "count": 1
-        },
-        {
-          "phrase": "burning in the sternum",
-          "count": 1
-        },
-        {
-          "phrase": "burning in the top of my stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning in throat while eating",
-          "count": 1
-        },
-        {
-          "phrase": "burning in upper stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning lingers after meals",
-          "count": 1
-        },
-        {
-          "phrase": "burning on the left side of my chest",
-          "count": 1
-        },
-        {
-          "phrase": "burning pain in mid solar plexus area",
-          "count": 1
-        },
-        {
-          "phrase": "burning pain in the throat",
-          "count": 1
-        },
-        {
-          "phrase": "burning pain in the upper abdomen",
-          "count": 1
-        },
-        {
-          "phrase": "burning pain when eating",
-          "count": 1
-        },
-        {
-          "phrase": "burning pains in stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation after sharp abdominal pain",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation all over body",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation at the top of the stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation at top of stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation down entire throat when swallowing honey",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation from alcohol",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation in right side of throat",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation in stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation in the throat after meals",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation in throat when eating certain foods",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation in throat when eating trigger foods",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation in throat, mouth, and nose",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation low in stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation waking from sleep",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation when drinking alcohol",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation when eating acidic foods",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensation when eating trigger foods",
-          "count": 1
-        },
-        {
-          "phrase": "burning sensations",
-          "count": 1
-        },
-        {
-          "phrase": "burning stomach sensation",
-          "count": 1
-        },
-        {
-          "phrase": "burning upper abdomen",
-          "count": 1
-        },
-        {
-          "phrase": "burning upper stomach",
-          "count": 1
-        },
-        {
-          "phrase": "burning when breathing",
-          "count": 1
-        },
-        {
-          "phrase": "burning when eating acidic foods",
-          "count": 1
-        },
-        {
-          "phrase": "burning when eating or drinking",
-          "count": 1
-        },
-        {
-          "phrase": "burning worse on an empty stomach",
-          "count": 1
-        },
-        {
-          "phrase": "chest burn",
-          "count": 1
-        },
-        {
-          "phrase": "chest burning pain",
-          "count": 1
-        },
-        {
-          "phrase": "constant burning",
-          "count": 1
-        },
-        {
-          "phrase": "constant burning in esophagus",
-          "count": 1
-        },
-        {
-          "phrase": "coolish burning feeling",
-          "count": 1
-        },
-        {
-          "phrase": "dull burning in the esophagus",
-          "count": 1
-        },
-        {
-          "phrase": "dull burning in the stomach",
-          "count": 1
-        },
-        {
-          "phrase": "dull burning in the throat",
-          "count": 1
-        },
-        {
-          "phrase": "esophagus burns",
-          "count": 1
-        },
-        {
-          "phrase": "esophagus felt like fire",
-          "count": 1
-        },
-        {
-          "phrase": "esophagus on fire",
-          "count": 1
-        },
-        {
-          "phrase": "felt like indigestion",
-          "count": 1
-        },
-        {
-          "phrase": "fiery burning in esophagus",
-          "count": 1
-        },
-        {
-          "phrase": "fire (esophageal burning/irritation)",
-          "count": 1
-        },
-        {
-          "phrase": "fire at nearly every meal",
-          "count": 1
-        },
-        {
-          "phrase": "food feels spicy",
-          "count": 1
-        },
-        {
-          "phrase": "food-induced immediate response (fire)",
-          "count": 1
-        },
-        {
-          "phrase": "heartburn / reflux",
-          "count": 1
-        },
-        {
-          "phrase": "heartburn or acid reflux sensation after eating",
-          "count": 1
-        },
-        {
-          "phrase": "heartburn or silent reflux every day",
-          "count": 1
-        },
-        {
-          "phrase": "heartburn with acid in throat",
-          "count": 1
-        },
-        {
-          "phrase": "heartburn/burning sensation in chest",
-          "count": 1
-        },
-        {
-          "phrase": "heartburn/chest pain worse during period",
-          "count": 1
-        },
-        {
-          "phrase": "heartburn/reflux",
-          "count": 1
-        },
-        {
-          "phrase": "hot feeling in throat",
-          "count": 1
-        },
-        {
-          "phrase": "immediate burning",
-          "count": 1
-        },
-        {
-          "phrase": "indigestion feeling almost daily",
-          "count": 1
-        },
-        {
-          "phrase": "indigestion from tropical fruits",
-          "count": 1
-        },
-        {
-          "phrase": "indigestion-like pain near sternum",
-          "count": 1
-        },
-        {
-          "phrase": "intense burning",
-          "count": 1
-        },
-        {
-          "phrase": "intense burning feeling",
-          "count": 1
-        },
-        {
-          "phrase": "intense burning in chest",
-          "count": 1
-        },
-        {
-          "phrase": "intense burning throat after wheat ingestion",
-          "count": 1
-        },
-        {
-          "phrase": "low burn in throat from dairy",
-          "count": 1
-        },
-        {
-          "phrase": "mouth/throat/chest burning",
-          "count": 1
-        },
-        {
-          "phrase": "pain and burning under ribcage",
-          "count": 1
-        },
-        {
-          "phrase": "pain from acidic foods",
-          "count": 1
-        },
-        {
-          "phrase": "pain/burning under ribcage",
-          "count": 1
-        },
-        {
-          "phrase": "pain/burning when swallowing",
-          "count": 1
-        },
-        {
-          "phrase": "painful burning when eating solid foods",
-          "count": 1
-        },
-        {
-          "phrase": "reflux-burning sensation",
-          "count": 1
-        },
-        {
-          "phrase": "reflux/burning sensation",
-          "count": 1
-        },
-        {
-          "phrase": "severe indigestion",
-          "count": 1
-        },
-        {
-          "phrase": "slight burning in chest",
-          "count": 1
-        },
-        {
-          "phrase": "sternum burning",
-          "count": 1
-        },
-        {
-          "phrase": "stomach burn sensation after drinking soda",
-          "count": 1
-        },
-        {
-          "phrase": "stomach burning",
-          "count": 1
-        },
-        {
-          "phrase": "stomach burning in the mornings",
-          "count": 1
-        },
-        {
-          "phrase": "stomach burns",
-          "count": 1
-        },
-        {
-          "phrase": "stomach burns for hours after eating wheat",
-          "count": 1
-        },
-        {
-          "phrase": "stomach feels like it's on fire",
-          "count": 1
-        },
-        {
-          "phrase": "terrible discomfort/burning in my chest after eating peanut butter",
-          "count": 1
-        },
-        {
-          "phrase": "throat and esophagus burning",
-          "count": 1
-        },
-        {
-          "phrase": "throat and tonsils burning when eating or drinking",
-          "count": 1
-        },
-        {
-          "phrase": "throat burning after eating",
-          "count": 1
-        },
-        {
-          "phrase": "throat burning and itching from the inside",
-          "count": 1
-        },
-        {
-          "phrase": "throat burning and pain after eating",
-          "count": 1
-        },
-        {
-          "phrase": "throat burning as a child",
-          "count": 1
-        },
-        {
-          "phrase": "throat burning in the evenings",
-          "count": 1
-        },
-        {
-          "phrase": "throat burning sensation",
-          "count": 1
-        },
-        {
-          "phrase": "throat burning sensation after vomiting",
-          "count": 1
-        },
-        {
-          "phrase": "throat burns after eating",
-          "count": 1
-        },
-        {
-          "phrase": "throat burns during cardio",
-          "count": 1
-        },
-        {
-          "phrase": "throat feeling hot",
-          "count": 1
-        },
-        {
-          "phrase": "throat feeling like it's on fire",
-          "count": 1
-        }
-      ]
-    },
-    {
       "canonical": "esophageal inflammation/swelling",
       "total": 200,
       "members": [
@@ -21575,6 +21149,432 @@
         },
         {
           "phrase": "weird allergic reactions",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "canonical": "burning sensation",
+      "total": 156,
+      "members": [
+        {
+          "phrase": "throat burning",
+          "count": 15
+        },
+        {
+          "phrase": "burning",
+          "count": 8
+        },
+        {
+          "phrase": "burning sensation",
+          "count": 6
+        },
+        {
+          "phrase": "burning in esophagus",
+          "count": 5
+        },
+        {
+          "phrase": "burning in throat",
+          "count": 5
+        },
+        {
+          "phrase": "burning in the throat",
+          "count": 3
+        },
+        {
+          "phrase": "burning mouth",
+          "count": 3
+        },
+        {
+          "phrase": "burning pain",
+          "count": 3
+        },
+        {
+          "phrase": "burning sensation in throat",
+          "count": 3
+        },
+        {
+          "phrase": "burning esophagus",
+          "count": 2
+        },
+        {
+          "phrase": "burning feeling",
+          "count": 2
+        },
+        {
+          "phrase": "burning in neck",
+          "count": 2
+        },
+        {
+          "phrase": "burning sensation in chest",
+          "count": 2
+        },
+        {
+          "phrase": "burning sensation in esophagus",
+          "count": 2
+        },
+        {
+          "phrase": "burning throat",
+          "count": 2
+        },
+        {
+          "phrase": "esophagus burning",
+          "count": 2
+        },
+        {
+          "phrase": "throat burn",
+          "count": 2
+        },
+        {
+          "phrase": "throat on fire",
+          "count": 2
+        },
+        {
+          "phrase": "ambient pain/burning",
+          "count": 1
+        },
+        {
+          "phrase": "burning after meals",
+          "count": 1
+        },
+        {
+          "phrase": "burning at esophagus",
+          "count": 1
+        },
+        {
+          "phrase": "burning at top of throat",
+          "count": 1
+        },
+        {
+          "phrase": "burning epigastric pain when hungry",
+          "count": 1
+        },
+        {
+          "phrase": "burning feeling between throat and esophagus",
+          "count": 1
+        },
+        {
+          "phrase": "burning feeling in throat",
+          "count": 1
+        },
+        {
+          "phrase": "burning in chest and upper and mid back when swallowing",
+          "count": 1
+        },
+        {
+          "phrase": "burning in the top of my stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning in throat while eating",
+          "count": 1
+        },
+        {
+          "phrase": "burning in upper stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning lingers after meals",
+          "count": 1
+        },
+        {
+          "phrase": "burning pain in mid solar plexus area",
+          "count": 1
+        },
+        {
+          "phrase": "burning pain in the throat",
+          "count": 1
+        },
+        {
+          "phrase": "burning pain in the upper abdomen",
+          "count": 1
+        },
+        {
+          "phrase": "burning pain when eating",
+          "count": 1
+        },
+        {
+          "phrase": "burning pains in stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation after sharp abdominal pain",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation all over body",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation at the top of the stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation at top of stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation down entire throat when swallowing honey",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation from alcohol",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation in right side of throat",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation in stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation in the throat after meals",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation in throat when eating certain foods",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation in throat when eating trigger foods",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation in throat, mouth, and nose",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation low in stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation waking from sleep",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation when drinking alcohol",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation when eating acidic foods",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensation when eating trigger foods",
+          "count": 1
+        },
+        {
+          "phrase": "burning sensations",
+          "count": 1
+        },
+        {
+          "phrase": "burning stomach sensation",
+          "count": 1
+        },
+        {
+          "phrase": "burning upper abdomen",
+          "count": 1
+        },
+        {
+          "phrase": "burning upper stomach",
+          "count": 1
+        },
+        {
+          "phrase": "burning when breathing",
+          "count": 1
+        },
+        {
+          "phrase": "burning when eating acidic foods",
+          "count": 1
+        },
+        {
+          "phrase": "burning when eating or drinking",
+          "count": 1
+        },
+        {
+          "phrase": "burning worse on an empty stomach",
+          "count": 1
+        },
+        {
+          "phrase": "constant burning",
+          "count": 1
+        },
+        {
+          "phrase": "constant burning in esophagus",
+          "count": 1
+        },
+        {
+          "phrase": "coolish burning feeling",
+          "count": 1
+        },
+        {
+          "phrase": "dull burning in the esophagus",
+          "count": 1
+        },
+        {
+          "phrase": "dull burning in the stomach",
+          "count": 1
+        },
+        {
+          "phrase": "dull burning in the throat",
+          "count": 1
+        },
+        {
+          "phrase": "esophagus burns",
+          "count": 1
+        },
+        {
+          "phrase": "esophagus felt like fire",
+          "count": 1
+        },
+        {
+          "phrase": "esophagus on fire",
+          "count": 1
+        },
+        {
+          "phrase": "fiery burning in esophagus",
+          "count": 1
+        },
+        {
+          "phrase": "fire (esophageal burning/irritation)",
+          "count": 1
+        },
+        {
+          "phrase": "fire at nearly every meal",
+          "count": 1
+        },
+        {
+          "phrase": "food feels spicy",
+          "count": 1
+        },
+        {
+          "phrase": "food-induced immediate response (fire)",
+          "count": 1
+        },
+        {
+          "phrase": "hot feeling in throat",
+          "count": 1
+        },
+        {
+          "phrase": "immediate burning",
+          "count": 1
+        },
+        {
+          "phrase": "intense burning",
+          "count": 1
+        },
+        {
+          "phrase": "intense burning feeling",
+          "count": 1
+        },
+        {
+          "phrase": "intense burning throat after wheat ingestion",
+          "count": 1
+        },
+        {
+          "phrase": "low burn in throat from dairy",
+          "count": 1
+        },
+        {
+          "phrase": "mouth/throat/chest burning",
+          "count": 1
+        },
+        {
+          "phrase": "pain and burning under ribcage",
+          "count": 1
+        },
+        {
+          "phrase": "pain from acidic foods",
+          "count": 1
+        },
+        {
+          "phrase": "pain/burning under ribcage",
+          "count": 1
+        },
+        {
+          "phrase": "pain/burning when swallowing",
+          "count": 1
+        },
+        {
+          "phrase": "painful burning when eating solid foods",
+          "count": 1
+        },
+        {
+          "phrase": "stomach burn sensation after drinking soda",
+          "count": 1
+        },
+        {
+          "phrase": "stomach burning",
+          "count": 1
+        },
+        {
+          "phrase": "stomach burning in the mornings",
+          "count": 1
+        },
+        {
+          "phrase": "stomach burns",
+          "count": 1
+        },
+        {
+          "phrase": "stomach burns for hours after eating wheat",
+          "count": 1
+        },
+        {
+          "phrase": "stomach feels like it's on fire",
+          "count": 1
+        },
+        {
+          "phrase": "throat and esophagus burning",
+          "count": 1
+        },
+        {
+          "phrase": "throat and tonsils burning when eating or drinking",
+          "count": 1
+        },
+        {
+          "phrase": "throat burning after eating",
+          "count": 1
+        },
+        {
+          "phrase": "throat burning and itching from the inside",
+          "count": 1
+        },
+        {
+          "phrase": "throat burning and pain after eating",
+          "count": 1
+        },
+        {
+          "phrase": "throat burning as a child",
+          "count": 1
+        },
+        {
+          "phrase": "throat burning in the evenings",
+          "count": 1
+        },
+        {
+          "phrase": "throat burning sensation",
+          "count": 1
+        },
+        {
+          "phrase": "throat burning sensation after vomiting",
+          "count": 1
+        },
+        {
+          "phrase": "throat burns after eating",
+          "count": 1
+        },
+        {
+          "phrase": "throat burns during cardio",
+          "count": 1
+        },
+        {
+          "phrase": "throat feeling hot",
+          "count": 1
+        },
+        {
+          "phrase": "throat feeling like it's on fire",
           "count": 1
         }
       ]
