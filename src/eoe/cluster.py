@@ -24,7 +24,7 @@ import anthropic
 from dotenv import load_dotenv
 
 from eoe.json_parsing import parse_model_json
-from eoe.prompts import CLUSTERING_SYSTEM_PROMPT
+from eoe.prompts import CLUSTERING_SYSTEM_PROMPT, FIXUP_ASSIGNMENT_SYSTEM_PROMPT
 
 DATA_DIR = Path(".data")
 RESULTS_FILE = DATA_DIR / "symptoms_raw.jsonl"
@@ -110,6 +110,188 @@ def normalize_mapping(grouping: dict, counts: Counter[str]) -> dict:
     }
 
 
+def request_unmapped_assignments(
+    client: anthropic.Anthropic,
+    unmapped: list[dict],
+    canonicals: list[str],
+) -> list[dict]:
+    """Ask Sonnet to map each unmapped phrase onto an existing canonical."""
+    user_message = (
+        f"CANONICALS ({len(canonicals)}):\n"
+        f"```json\n{json.dumps(canonicals, indent=2)}\n```\n\n"
+        f"UNMAPPED PHRASES ({len(unmapped)}):\n"
+        f"```json\n{json.dumps(unmapped, indent=2)}\n```"
+    )
+    response = client.messages.create(
+        model=CLUSTER_MODEL,
+        max_tokens=CLUSTER_MAX_TOKENS,
+        system=FIXUP_ASSIGNMENT_SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": user_message}],
+    )
+    text = next((b.text for b in response.content if b.type == "text"), "").strip()
+    parsed = parse_model_json(text)
+    if parsed is None or "assignments" not in parsed:
+        raise RuntimeError(
+            f"Could not parse fixup response. Raw text:\n{text[:2000]}"
+        )
+    return parsed["assignments"]
+
+
+def apply_fixups(
+    client: anthropic.Anthropic, mapping: dict, counts: Counter[str]
+) -> dict:
+    """Apply two surgical fixes to a Pass 1 mapping:
+    1. LLM-map any count >= 2 phrases that landed in `unmapped` onto canonicals.
+    2. Deterministically dedup phrases listed in two groups by keeping only the
+       higher-total-count group's membership.
+    """
+    canonicals = [g["canonical"] for g in mapping["groups"]]
+    by_canonical = {g["canonical"]: g for g in mapping["groups"]}
+
+    # --- Step 1: LLM-map unmapped count >= 2 phrases onto canonicals
+    unmapped_to_fix = [u for u in mapping["unmapped"] if u["count"] >= 2]
+    print(
+        f"Step 1: mapping {len(unmapped_to_fix)} unmapped count>=2 phrases "
+        f"onto {len(canonicals)} canonicals..."
+    )
+    fixed = 0
+    skipped = 0
+    if unmapped_to_fix:
+        assignments = request_unmapped_assignments(client, unmapped_to_fix, canonicals)
+        for a in assignments:
+            phrase = (a.get("phrase") or "").strip().lower()
+            canonical = (a.get("canonical") or "").strip().lower()
+            if not phrase:
+                continue
+            if canonical and canonical != "none" and canonical in by_canonical:
+                by_canonical[canonical]["members"].append(
+                    {"phrase": phrase, "count": counts.get(phrase, 0)}
+                )
+                fixed += 1
+                print(f"  + {phrase}  ({counts.get(phrase, 0)}) → {canonical}")
+            else:
+                skipped += 1
+                print(f"  ? {phrase}  → '{canonical or 'none'}' (left unmapped)")
+    print(f"  → mapped {fixed}, left unmapped {skipped}")
+
+    # --- Step 2: Dedup phrases that appear in multiple groups
+    phrase_to_groups: dict[str, list[str]] = {}
+    for g in mapping["groups"]:
+        for m in g["members"]:
+            phrase_to_groups.setdefault(m["phrase"], []).append(g["canonical"])
+    duplicates = {
+        p: list(set(gs)) for p, gs in phrase_to_groups.items() if len(set(gs)) > 1
+    }
+    print(f"\nStep 2: deduping {len(duplicates)} phrases in multiple groups...")
+    for phrase, group_names in duplicates.items():
+        winner = max(group_names, key=lambda c: by_canonical[c]["total"])
+        for c in group_names:
+            if c == winner:
+                continue
+            g = by_canonical[c]
+            g["members"] = [m for m in g["members"] if m["phrase"] != phrase]
+        print(f"  • {phrase}: keep in '{winner}', remove from "
+              f"{[c for c in group_names if c != winner]}")
+
+    # --- Step 3: Re-normalize totals, dedup-within-group, sort, regenerate unmapped
+    for g in mapping["groups"]:
+        seen: dict[str, int] = {}
+        for m in g["members"]:
+            seen[m["phrase"]] = m["count"]
+        g["members"] = sorted(
+            ({"phrase": p, "count": c} for p, c in seen.items()),
+            key=lambda m: (-m["count"], m["phrase"]),
+        )
+        g["total"] = sum(m["count"] for m in g["members"])
+    mapping["groups"].sort(key=lambda g: (-g["total"], g["canonical"]))
+
+    seen_phrases: set[str] = set()
+    for g in mapping["groups"]:
+        for m in g["members"]:
+            seen_phrases.add(m["phrase"])
+    unmapped_pairs = [(p, c) for p, c in counts.items() if p not in seen_phrases]
+    unmapped_pairs.sort(key=lambda kv: (-kv[1], kv[0]))
+    mapping["unmapped"] = [{"phrase": p, "count": c} for p, c in unmapped_pairs]
+
+    return mapping
+
+
+def apply_pass2(
+    client: anthropic.Anthropic,
+    mapping: dict,
+    counts: Counter[str],
+    chunk_size: int,
+) -> dict:
+    """Map every remaining unmapped phrase (mostly singletons) onto an existing
+    canonical, in chunks. Phrases the LLM declines (\"none\") stay in the
+    unmapped list as the genuinely-different long tail.
+    """
+    canonicals = [g["canonical"] for g in mapping["groups"]]
+    by_canonical = {g["canonical"]: g for g in mapping["groups"]}
+
+    unmapped = mapping["unmapped"]
+    if not unmapped:
+        print("Nothing to map: unmapped list is empty.")
+        return mapping
+
+    chunks = [unmapped[i : i + chunk_size] for i in range(0, len(unmapped), chunk_size)]
+    print(
+        f"Pass 2: mapping {len(unmapped):,} unmapped phrases onto "
+        f"{len(canonicals)} canonicals in {len(chunks)} chunks of "
+        f"≤ {chunk_size}..."
+    )
+
+    total_mapped = 0
+    total_none = 0
+    for i, chunk in enumerate(chunks, 1):
+        print(f"  chunk {i}/{len(chunks)}: {len(chunk)} phrases ...", end="", flush=True)
+        assignments = request_unmapped_assignments(client, chunk, canonicals)
+        c_mapped = 0
+        c_none = 0
+        for a in assignments:
+            phrase = (a.get("phrase") or "").strip().lower()
+            canonical = (a.get("canonical") or "").strip().lower()
+            if not phrase:
+                continue
+            if canonical and canonical != "none" and canonical in by_canonical:
+                by_canonical[canonical]["members"].append(
+                    {"phrase": phrase, "count": counts.get(phrase, 0)}
+                )
+                c_mapped += 1
+            else:
+                c_none += 1
+        total_mapped += c_mapped
+        total_none += c_none
+        print(f"  mapped={c_mapped} none={c_none}")
+
+    print(
+        f"\nPass 2 complete: mapped {total_mapped:,}, "
+        f"left in unmapped {total_none:,}"
+    )
+
+    # Re-normalize
+    for g in mapping["groups"]:
+        seen: dict[str, int] = {}
+        for m in g["members"]:
+            seen[m["phrase"]] = m["count"]
+        g["members"] = sorted(
+            ({"phrase": p, "count": c} for p, c in seen.items()),
+            key=lambda m: (-m["count"], m["phrase"]),
+        )
+        g["total"] = sum(m["count"] for m in g["members"])
+    mapping["groups"].sort(key=lambda g: (-g["total"], g["canonical"]))
+
+    seen_phrases: set[str] = set()
+    for g in mapping["groups"]:
+        for m in g["members"]:
+            seen_phrases.add(m["phrase"])
+    unmapped_pairs = [(p, c) for p, c in counts.items() if p not in seen_phrases]
+    unmapped_pairs.sort(key=lambda kv: (-kv[1], kv[0]))
+    mapping["unmapped"] = [{"phrase": p, "count": c} for p, c in unmapped_pairs]
+
+    return mapping
+
+
 def validate_mapping() -> int:
     if not MAPPING_FILE.exists():
         print(f"No mapping at {MAPPING_FILE}. Run without --validate first.")
@@ -163,10 +345,58 @@ def main() -> None:
         help="Cluster only phrases with at least this many mentions (default: 2). "
         "Long-tail phrases below this stay in `unmapped` for a Pass 2.",
     )
+    parser.add_argument(
+        "--fixup",
+        action="store_true",
+        help="Patch an existing symptom_mapping.json: LLM-map the unmapped "
+        "count>=2 phrases onto existing canonicals, then deterministically "
+        "dedup phrases in multiple groups (winner = higher total count).",
+    )
+    parser.add_argument(
+        "--pass2",
+        action="store_true",
+        help="Map every remaining unmapped phrase (mostly singletons) onto an "
+        "existing canonical via chunked LLM calls. Phrases the model declines "
+        "stay in the unmapped list as the genuine long tail.",
+    )
+    parser.add_argument(
+        "--chunk-size",
+        type=int,
+        default=500,
+        help="Pass 2 chunk size (default: 500).",
+    )
     args = parser.parse_args()
 
     if args.validate:
         sys.exit(validate_mapping())
+
+    if args.fixup:
+        load_dotenv()
+        if not MAPPING_FILE.exists():
+            print(f"No mapping at {MAPPING_FILE}. Run without --fixup first.",
+                  file=sys.stderr)
+            sys.exit(2)
+        mapping = json.loads(MAPPING_FILE.read_text())
+        counts = load_phrase_counts()
+        client = anthropic.Anthropic()
+        fixed = apply_fixups(client, mapping, counts)
+        MAPPING_FILE.write_text(json.dumps(fixed, indent=2))
+        print(f"\nWrote fixed mapping to {MAPPING_FILE}")
+        return
+
+    if args.pass2:
+        load_dotenv()
+        if not MAPPING_FILE.exists():
+            print(f"No mapping at {MAPPING_FILE}. Run without --pass2 first.",
+                  file=sys.stderr)
+            sys.exit(2)
+        mapping = json.loads(MAPPING_FILE.read_text())
+        counts = load_phrase_counts()
+        client = anthropic.Anthropic()
+        updated = apply_pass2(client, mapping, counts, args.chunk_size)
+        MAPPING_FILE.write_text(json.dumps(updated, indent=2))
+        print(f"\nWrote updated mapping to {MAPPING_FILE}")
+        return
 
     load_dotenv()
     if not RESULTS_FILE.exists():

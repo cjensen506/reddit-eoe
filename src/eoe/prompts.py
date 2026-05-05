@@ -84,6 +84,33 @@ def build_extraction_user_message(title: str, selftext: str) -> str:
     return f"TITLE: {title}\n\nBODY:\n{selftext}"
 
 
+FIXUP_ASSIGNMENT_SYSTEM_PROMPT = """\
+You are mapping a small set of leftover symptom phrases onto an existing list \
+of canonical symptom groups for an analysis of self-reported symptoms in \
+r/EosinophilicE posts.
+
+You will be given:
+1. A list of canonical symptom names that have already been established.
+2. A list of unmapped phrases (with their occurrence counts).
+
+For each unmapped phrase, return the single canonical name it best matches. \
+Map liberally — these phrases are slight wording variations of common \
+self-reported EoE symptoms (e.g. "food getting stuck" → "food impaction", \
+"food sticking" → "food impaction", "throat soreness" → "sore throat"). \
+Only return "none" if the phrase represents a genuinely different symptom \
+not covered by any existing canonical.
+
+Output format — return ONLY valid JSON, no prose, no markdown fences:
+{
+  "assignments": [
+    {"phrase": "<phrase>", "canonical": "<canonical name or 'none'>"}
+  ]
+}
+
+Every input phrase must appear exactly once in the assignments list.
+"""
+
+
 CLUSTERING_SYSTEM_PROMPT = """\
 You are grouping free-text symptom phrases extracted from r/EosinophilicE posts \
 into canonical symptom categories.
